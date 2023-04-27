@@ -1,0 +1,17 @@
+void convert(int arr[], int n)
+{
+    // Create a copy of arrp[] in temp and sort the temp array
+    // in increasing order
+    int temp[n];
+    for (int i=0; i<n; i++)
+        temp[i] = arr[i];
+    sort(temp, temp+n);
+  
+    // Traverse all array elements
+    for (int i=0; i<n; i++)
+    {
+        // lower_bound() Returns pointer to the first element
+        // greater than or equal to arr[i]
+        arr[i] = lower_bound(temp, temp+n, arr[i]) - temp + 1;
+    }
+}
