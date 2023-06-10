@@ -1,0 +1,3 @@
+moore's voting
+aho corasick
+suffix array / tree
