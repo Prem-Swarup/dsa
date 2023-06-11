@@ -2,4 +2,4 @@ skip list
 suffix array/tree
 b-trees
 graphs
-trees
+auxiliary trees
