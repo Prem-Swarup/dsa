@@ -1,0 +1,15 @@
+/*
+leetcode
+static int N = [] () {
+            ios::sync_with_stdio(false); 
+            cin.tie(0); 
+            return 0;
+        } ();
+*/
+
+#pragma GCC optimize("Ofast,no-stack-protector,unroll-loops,fast-math")
+#pragma GCC optimize("O3")
+
+#define IOS ios_base :: sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+// constexpr
