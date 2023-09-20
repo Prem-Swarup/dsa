@@ -1,3 +1,7 @@
 moore's voting
 aho corasick
 suffix array / tree / automata
+
+
+constexpr
+template metaprogramming
