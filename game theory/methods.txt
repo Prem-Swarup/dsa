@@ -1,0 +1,5 @@
+game of nim
+combinatorics
+sprague-grundy
+
+https://www.geeksforgeeks.org/game-theory/
