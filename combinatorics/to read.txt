@@ -1,0 +1,5 @@
+inclusion/exclusion principal
+stars and bars
+Burnside's lemma / Pólya enumeration theorem
+binomial coefficient
+catalan numbers
