@@ -15,11 +15,13 @@ template<typename T=long long>
 class SegmentTree {
     vector<T> tree;
     int size;
+    T mnVal;
  
 public:
-    SegmentTree(vector<T>& array) {
+    SegmentTree(vector<T>& array, T val) {
         size = array.size();
         tree.resize(4 * size);
+        mnVal = val;
         buildTree(array, 0, 0, size - 1);
     }
  
@@ -35,11 +37,11 @@ private:
         tree[treeIndex] = func<T>(tree[2 * treeIndex + 1], tree[2 * treeIndex + 2]);
     }
  
-    int query(int treeIndex, int left, int right, int queryLeft, int queryRight) {
+    T query(int treeIndex, int left, int right, int queryLeft, int queryRight) {
         if (queryLeft <= left && right <= queryRight)
             return tree[treeIndex];
         int mid = left + (right - left) / 2;
-        int minValue = 0 ;
+        T minValue = mnVal ;
         if (queryLeft <= mid)
             minValue = func<T>(minValue, query(2 * treeIndex + 1, left, mid, queryLeft, queryRight));
         if (queryRight > mid)
@@ -48,7 +50,7 @@ private:
     }
  
 public:
-    int query(int left, int right) {
+    T query(int left, int right) {
         return query(0, 0, size - 1, left, right);
     }
 };
