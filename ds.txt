@@ -1,5 +1,7 @@
 skip list
 suffix array/tree
 b-trees
+avl tree
 graphs
+layering
 auxiliary trees
