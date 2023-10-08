@@ -1,0 +1,25 @@
+{
+	"binary search": {
+		"prefix": "srch",
+		"body": [
+		"  ll l=$1, r=$2;",
+		"  ll mid, last=r ;",
+		"",
+		"  function<bool(ll)> kk = [&](ll md) {",
+		"    $0",
+		"    return false ;",
+		"  } ;",
+		"",
+		"  while(l<=r){",
+		"      mid = l+r>>1 ;",
+		"    if(kk(mid)) {",
+		"      l = mid +$3 1 ;",
+		"      last = l ;",
+		"    } else {",
+		"      r = mid -$4 1 ;",
+		"    }",
+		"  }"
+		],
+		"description": "binary search"
+	}
+}
