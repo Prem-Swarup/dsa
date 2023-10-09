@@ -12,7 +12,7 @@
 		"",
 		"  while(l<=r){",
 		"      mid = l+r>>1 ;",
-		"    if(kk(mid)) {",
+		"    if(kk()) {",
 		"      last = mid ;",
 		"      l = mid +$4 1 ;",
 		"    } else {",
