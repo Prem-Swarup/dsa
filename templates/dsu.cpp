@@ -7,6 +7,7 @@ class DisjSet {
 	int *rank, *parent, n;
 
 public:
+	int comp ;
 	DisjSet(int n) ;
 	void makeSet() ;
 	int find(int x) ;
@@ -19,6 +20,7 @@ DisjSet::DisjSet(int n) {
 	rank = new int[n];
 	parent = new int[n];
 	this->n = n;
+	this->comp = n;
 	makeSet();
 }
 
@@ -45,6 +47,7 @@ void DisjSet::Union(int x, int y)
 	int yset = find(y);
 	if (xset == yset)
 		return;
+	comp-- ;
 	if (rank[xset] < rank[yset]) {
 		parent[xset] = yset;
 	}
