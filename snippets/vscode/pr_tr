@@ -2,18 +2,19 @@
 	"parent_tree": {
 		"prefix": "pr_tr",
 		"body": [
-		  "	   vector<bool> vis(n, 1) ;"
+		  "    vector<bool> vis(n, 1) ;"
 		  "    vector<ll> pr(n, -1);",
-		  "    function<void(ll)> dfs$1 = [&](ll rt) {",
+		  "    function<void(ll)> dpr = [&](ll rt) {",
 		  "        for(auto x:adj[rt]) {",
 		  "            if(vis[x]) {",
 		  "                vis[x] = 0 ;",
 		  "                pr[x] = rt ;",
-		  "                dfs$2(x) ;",
+		  "                dpr(x) ;",
 		  "            }",
 		  "        }",
 		  "    };"
-		  "dfs$0(0) ;"
+		  "    vis[0]=0;"
+		  "    dfs$0(0) ;"
 		],
 		"description": "parent_tree"
 	  }
