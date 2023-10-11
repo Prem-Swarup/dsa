@@ -13,13 +13,13 @@ template<typename T=long long>
 class SparseTable {
 private:
     std::vector<std::vector<T>> table;
-
+    T stVal;
 public:
     SparseTable(const std::vector<T>& arr) {
         T n = arr.size();
         T logN = log2(n) + 1;
         table.resize(n, std::vector<T>(logN));
-
+        stVal = 0;
         // Initialize the table with values from the original array
         for (T i = 0; i < n; i++) {
             table[i][0] = arr[i];
@@ -34,11 +34,11 @@ public:
     }
 
     T query(T left, T right) {
-        T sum = 0;
+        T sum = stVal;
 
         for (T j = log2(right - left + 1); j >= 0; j--) {
             if ((1 << j) <= (right - left + 1)) {
-                sum += table[left][j];
+                sum = func(sum, table[left][j]);
                 left += (1 << j);
             }
         }
