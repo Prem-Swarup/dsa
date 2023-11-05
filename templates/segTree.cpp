@@ -48,10 +48,30 @@ private:
             minValue = func<T>(minValue, query(2 * treeIndex + 2, mid + 1, right, queryLeft, queryRight));
         return minValue;
     }
+    T update(int treeIndex, int left, int right, int pos, T val){
+        if(left==pos && right==pos) {
+            tree[treeIndex] = val ;
+            return val;
+        }
+        int mid = left + (right-left)/2 ;
+        T minValue = mnVal ;
+        if(pos<=mid) {
+            minValue = func<T>(minValue, update(2 * treeIndex + 1, left, mid, pos, val));
+            minValue = func<T>(minValue, tree[2 * treeIndex + 2]);
+        }else {
+            minValue = func<T>(minValue, update(2 * treeIndex + 2, mid+1, right, pos, val));
+            minValue = func<T>(minValue, tree[2 * treeIndex + 1]);
+        }
+        tree[treeIndex] = minValue ;
+        return minValue ;
+    }
  
 public:
     T query(int left, int right) {
         return query(0, 0, size - 1, left, right);
+    }
+    void update(int pos, T val) {
+        update(0, 0, size-1, pos, val) ;
     }
 };
 
