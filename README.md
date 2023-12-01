@@ -1,3 +1,3 @@
-# cp
+# dsa
 - to keep various important data structures and algorithms
-- to keep various snippets and boilerplate code for cp
+- to keep various codes for various problems
